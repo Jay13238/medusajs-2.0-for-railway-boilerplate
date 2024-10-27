@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function about() {
+export default function About() {
   return (
     <div className="pt-24 max-w-lg w-full px-6 md:px-0 md:mx-auto">
       <h1 className="text-center mb-10">About Us</h1>
@@ -16,12 +16,12 @@ export default function about() {
         Our mission focuses on helping people spiritually, mentally, and
         physically. We conduct seminars covering a wide range of topics,
         including spiritual growth, end-time events, emotional healing, health,
-        cooking classes, marriage, parenting, and men's ministries. One of our
-        most popular programs is the "Personality" series, which has received
-        widespread acclaim. The ministry is led by Renier and Chantell Horn,
-        along with their two sons, Jonathan and Matthew. With over a decade of
-        ministry experience, Renier and Chantell have worked with three major
-        conferences in South Africa.
+        cooking classes, marriage, parenting, and men&apos;s ministries. One of
+        our most popular programs is the &quot;Personality&quot; series, which
+        has received widespread acclaim. The ministry is led by Renier and
+        Chantell Horn, along with their two sons, Jonathan and Matthew. With
+        over a decade of ministry experience, Renier and Chantell have worked
+        with three major conferences in&nbsp;South&nbsp;Africa.
       </p>
     </div>
   )
