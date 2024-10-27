@@ -1,32 +1,37 @@
 import { Github } from "@medusajs/icons"
-import { Button, Heading } from "@medusajs/ui"
+import { Heading } from "@medusajs/ui"
+import { Button, ButtonGroup } from "@nextui-org/react"
+import heroImage from "../../../../../public/div.jpg"
+import Image from "next/image"
+import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 const Hero = () => {
   return (
-    <div className="h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
-      <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
+    <div className="h-[75vh] w-full border-b border-ui-border-base relative">
+      <Image
+        src={heroImage}
+        fill
+        alt="Hero Background"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black opacity-30 z-10"></div>
+
+      <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center small:p-32 gap-6">
         <span>
           <Heading
             level="h1"
-            className="text-3xl leading-10 text-ui-fg-base font-normal"
+            className="text-6xl leading-10 text-ui-fg-base mb-5 text-white font-semibold"
           >
-            Well done! You have successfully deployed your Medusa 2.0 store on Railway!
-          </Heading>
-          <Heading
-            level="h2"
-            className="text-3xl leading-10 text-ui-fg-subtle font-normal"
-          >
-            Need help customizing your store?
+            Welcome to Our Store
           </Heading>
         </span>
-        <a
-          href="https://funkyton.com/medusajs-2-0-is-finally-here/"
-          target="_blank"
-        >
-          <h1 style={{ textDecoration: "underline" }}>
-            Visit the tutorial
-          </h1>
-        </a>
+        <LocalizedClientLink href="/store">
+          <Button className="bg-primary text-white" size="lg" variant="solid">
+            Shop Now
+          </Button>
+        </LocalizedClientLink>
       </div>
     </div>
   )
