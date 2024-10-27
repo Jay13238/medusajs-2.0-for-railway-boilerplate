@@ -4,6 +4,7 @@ import { Popover, Transition } from "@headlessui/react"
 import { ArrowRightMini, XMark } from "@medusajs/icons"
 import { Text, clx, useToggleState } from "@medusajs/ui"
 import { Fragment } from "react"
+import { GiHamburgerMenu } from "react-icons/gi"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CountrySelect from "../country-select"
@@ -12,8 +13,7 @@ import { HttpTypes } from "@medusajs/types"
 const SideMenuItems = {
   Home: "/",
   Store: "/store",
-  Search: "/search",
-  Account: "/account",
+  About: "/about",
   Cart: "/cart",
 }
 
@@ -31,7 +31,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                   data-testid="nav-menu-button"
                   className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-ui-fg-base"
                 >
-                  Menu
+                  <GiHamburgerMenu size={28} />
                 </Popover.Button>
               </div>
 
