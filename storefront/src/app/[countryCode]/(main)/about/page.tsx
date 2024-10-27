@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function page() {
+export default function about() {
   return (
     <div className="pt-24 max-w-lg w-full px-6 md:px-0 md:mx-auto">
       <h1 className="text-center mb-10">About Us</h1>
