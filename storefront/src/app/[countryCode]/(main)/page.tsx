@@ -11,7 +11,7 @@ import { Button, Input, Textarea } from "@nextui-org/react"
 
 // Import images directly
 import cat1 from "../../../../public/cat1.webp"
-import cat2 from "../../../../public/cat1.webp"
+import cat2 from "../../../../public/div.jpg"
 import cat3 from "../../../../public/cat1.webp"
 
 // Array of category images
