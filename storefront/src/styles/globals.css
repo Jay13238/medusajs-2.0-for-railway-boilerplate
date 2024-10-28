@@ -109,4 +109,12 @@
   .text-3xl-semi {
     @apply text-[32px] leading-[44px] font-semibold;
   }
+
+  h1 {
+    @apply text-6xl font-semibold text-primary;
+  }
+
+  h2 {
+    @apply text-4xl font-semibold text-primary;
+  }
 }
