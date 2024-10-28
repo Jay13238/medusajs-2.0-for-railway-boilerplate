@@ -58,7 +58,7 @@ export default async function Nav() {
                 >
                   <div className="text-lg">
                     <p className=" flex">
-                      <IoCart className="text-2xl" aria-hidden="true" />0
+                      <IoCart className="text-2xl"  />0
                     </p>
                   </div>
                 </LocalizedClientLink>
