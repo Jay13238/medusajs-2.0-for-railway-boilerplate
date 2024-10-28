@@ -19,9 +19,8 @@ import cat2 from "../../../../public/blender.jpg"
 const categoryImages = [cat2, cat1,] // Add more images as needed
 
 export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
-  description:
-    "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
+  title: "Preperation Ministry",
+  description: "Welcome to The Preparation Ministry. ",
 }
 
 //@ts-ignore
