@@ -39,10 +39,10 @@ export default async function Home({ params: { countryCode } }) {
       <div className="py-12 ">
         <div className="max-w-xl w-full mx-auto">
           <p className="text-primary italic text-center pb-10">
-            Welcome to The Preparation Ministry. We offer high-quality seminars
-            and programs that align with our principles for spiritual, mental,
-            and physical well-being. Join us as we empower lives through topics
-            like spiritual growth, emotional healing, health, and more.
+            Welcome to The Preparation Ministry. We offer high-quality items
+            that align with our principles for spiritual, mental, and physical
+            well-being. Join us as we empower lives through topics like
+            spiritual growth, emotional healing, health, and more.
           </p>
         </div>
 
