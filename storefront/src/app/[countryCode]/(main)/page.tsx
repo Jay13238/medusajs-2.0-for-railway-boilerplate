@@ -11,11 +11,11 @@ import { Button, Input, Textarea } from "@nextui-org/react"
 
 // Import images directly
 import cat1 from "../../../../public/cat1.webp"
-import cat2 from "../../../../public/div.jpg"
-import cat3 from "../../../../public/cat1.webp"
+import cat2 from "../../../../public/blender.jpg"
+
 
 // Array of category images
-const categoryImages = [cat1, cat2, cat3] // Add more images as needed
+const categoryImages = [cat1, cat2,] // Add more images as needed
 
 export const metadata: Metadata = {
   title: "Medusa Next.js Starter Template",
