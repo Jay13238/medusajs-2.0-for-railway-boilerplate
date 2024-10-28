@@ -6,9 +6,16 @@ import Hero from "@modules/home/components/hero"
 import { getCollectionsWithProducts } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 import { getCategoriesList } from "@lib/data/categories"
-import cat1 from "../../../../public/cat1.webp"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { Button, Input, Textarea } from "@nextui-org/react"
+
+// Import images directly
+import cat1 from "../../../../public/cat1.webp"
+import cat2 from "../../../../public/cat1.webp"
+import cat3 from "../../../../public/cat1.webp"
+
+// Array of category images
+const categoryImages = [cat1, cat2, cat3] // Add more images as needed
 
 export const metadata: Metadata = {
   title: "Medusa Next.js Starter Template",
@@ -43,7 +50,7 @@ export default async function Home({ params: { countryCode } }) {
         <section className="py-12">
           <h2 className="text-center mb-10">Category List</h2>
           <div className="flex flex-wrap justify-center gap-6 mt-6">
-            {product_categories?.map((category) => (
+            {product_categories?.map((category, index) => (
               <LocalizedClientLink
                 key={category.id}
                 href={`/categories/${category.handle}`}
@@ -52,7 +59,7 @@ export default async function Home({ params: { countryCode } }) {
                 <div className="relative w-full h-full border rounded-md shadow-md p-4 flex items-center justify-center transform transition-transform duration-300 hover:scale-105 overflow-hidden">
                   <div className="absolute inset-0 bg-black opacity-30 rounded-md z-10"></div>
                   <Image
-                    src={cat1}
+                    src={categoryImages[index % categoryImages.length]} // Cycle through images
                     alt={category.name}
                     layout="fill"
                     objectFit="cover"
