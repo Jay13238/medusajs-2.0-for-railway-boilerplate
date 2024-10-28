@@ -1,7 +1,7 @@
 import { Github } from "@medusajs/icons"
 import { Heading } from "@medusajs/ui"
 import { Button, ButtonGroup } from "@nextui-org/react"
-import heroImage from "../../../../../public/div.jpg"
+import heroImage from "../../../../../public/hero.jpg"
 import Image from "next/image"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
