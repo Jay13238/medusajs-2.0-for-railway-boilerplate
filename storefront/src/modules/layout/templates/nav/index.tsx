@@ -40,7 +40,7 @@ export default async function Nav() {
               <div className="hidden md:block">
                 <Image
                   src={logo}
-                  width={250}
+                  width={350}
                   height={64}
                   alt="Medusa Store logo"
                 />
