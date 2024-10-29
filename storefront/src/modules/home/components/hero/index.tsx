@@ -7,7 +7,7 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 
 const Hero = () => {
   return (
-    <div className="h-[75vh] w-full border-b border-ui-border-base relative">
+    <div className=" h-[20vh]  md:h-[75vh] w-full border-b border-ui-border-base relative">
       <Image
         src={heroImage}
         fill
