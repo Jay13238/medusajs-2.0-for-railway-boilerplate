@@ -13,6 +13,7 @@ import { Button, Input, Textarea } from "@nextui-org/react"
 import cat1 from "../../../../public/cat1.webp"
 
 import cat2 from "../../../../public/blender.jpg"
+import { Heading } from "@medusajs/ui"
 
 
 // Array of category images
@@ -37,6 +38,21 @@ export default async function Home({ params: { countryCode } }) {
     <>
       <Hero />
       <div className="py-12 ">
+        <div className=" md:hidden flex flex-col justify-center items-center text-center small:p-32 gap-6">
+          <span>
+            <Heading
+              level="h1"
+              className="text-6xl leading-10 text-ui-fg-base mb-5 text-white font-semibold"
+            >
+              Welcome to Our Store
+            </Heading>
+          </span>
+          <LocalizedClientLink href="/store">
+            <Button className="bg-primary text-white" size="lg" variant="solid">
+              Shop Now
+            </Button>
+          </LocalizedClientLink>
+        </div>
         <div className="max-w-xl w-full mx-auto">
           <p className="text-primary italic text-center pb-10">
             Welcome to The Preparation Ministry. We offer high-quality items

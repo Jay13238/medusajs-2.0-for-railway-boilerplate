@@ -18,7 +18,7 @@ const Hero = () => {
       {/* Dark Overlay */}
 
 
-      <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center small:p-32 gap-6">
+      <div className="absolute hidden md:flex inset-0 z-20  flex-col justify-center items-center text-center small:p-32 gap-6">
         <span>
           <Heading
             level="h1"
