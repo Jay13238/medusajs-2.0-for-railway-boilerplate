@@ -37,7 +37,7 @@ export default async function Home({ params: { countryCode } }) {
   return (
     <>
       <Hero />
-      <div className="py-12 ">
+      <div className="py-12 px-4">
         <div className=" md:hidden flex flex-col justify-center items-center text-center small:p-32 gap-6">
           <span>
             <Heading
