@@ -42,7 +42,7 @@ export default async function Home({ params: { countryCode } }) {
           <span>
             <Heading
               level="h1"
-              className="text-6xl leading-10 text-ui-fg-base mb-5 text-primary font-semibold"
+              className="text-6xl text-ui-fg-base mb-5 text-primary font-semibold"
             >
               Welcome to Our Store
             </Heading>
