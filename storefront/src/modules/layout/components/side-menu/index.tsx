@@ -32,7 +32,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                   data-testid="nav-menu-button"
                   className="relative text-white font-semibold h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-ui-fg-base"
                 >
-                  <FiMenu />
+                  <FiMenu size={24} />
                 </Popover.Button>
               </div>
 
