@@ -12,7 +12,7 @@ const Hero = () => {
         src={heroImage}
         fill
         alt="Hero Background"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover object-right "
       />
 
       {/* Dark Overlay */}
