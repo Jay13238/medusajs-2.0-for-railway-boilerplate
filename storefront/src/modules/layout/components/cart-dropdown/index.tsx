@@ -80,11 +80,11 @@ const CartDropdown = ({
       <Popover className="relative h-full">
         <Popover.Button className="h-full">
           <LocalizedClientLink
-            className="hover:text-ui-fg-base text-primary flex"
+            className="hover:text-ui-fg-base text-white flex"
             href="/cart"
             data-testid="nav-cart-link"
           >
-            <IoBag size={24} className="text-primary" />
+            <IoBag size={24} className="text-white" />
             {`(${totalItems})`}
           </LocalizedClientLink>
         </Popover.Button>

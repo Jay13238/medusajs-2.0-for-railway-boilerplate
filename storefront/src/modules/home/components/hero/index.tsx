@@ -1,7 +1,7 @@
 import { Github } from "@medusajs/icons"
 import { Heading } from "@medusajs/ui"
 import { Button, ButtonGroup } from "@nextui-org/react"
-import heroImage from "../../../../../public/hero.jpg"
+import heroImage from "../../../../../public/hero.jpeg"
 import Image from "next/image"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
@@ -16,7 +16,7 @@ const Hero = () => {
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black opacity-20 z-10"></div>
+      <div className="absolute inset-0 bg-black opacity-10 z-10"></div>
 
       <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center small:p-32 gap-6">
         <span>
