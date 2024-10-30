@@ -14,7 +14,6 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import Thumbnail from "@modules/products/components/thumbnail"
 import { IoBag } from "react-icons/io5"
 
-
 const CartDropdown = ({
   cart: cartState,
 }: {
@@ -63,6 +62,9 @@ const CartDropdown = ({
 
   const pathname = usePathname()
 
+  // Check if the current path is the homepage
+  const isHomepage = /^\/(za|ew)?$/.test(pathname)
+
   // open cart dropdown when modifying the cart items, but only if we're not on the cart page
   useEffect(() => {
     if (itemRef.current !== totalItems && !pathname.includes("/cart")) {
@@ -80,11 +82,16 @@ const CartDropdown = ({
       <Popover className="relative h-full">
         <Popover.Button className="h-full">
           <LocalizedClientLink
-            className="hover:text-ui-fg-base text-white flex"
+            className={`hover:text-ui-fg-base flex ${
+              isHomepage ? "text-black" : "text-white"
+            }`}
             href="/cart"
             data-testid="nav-cart-link"
           >
-            <IoBag size={24} className="text-white" />
+            <IoBag
+              size={24}
+              className={isHomepage ? "text-black" : "text-white"}
+            />
             {`(${totalItems})`}
           </LocalizedClientLink>
         </Popover.Button>
