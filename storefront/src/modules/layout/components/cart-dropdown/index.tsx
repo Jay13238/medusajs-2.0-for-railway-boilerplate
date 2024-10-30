@@ -62,8 +62,8 @@ const CartDropdown = ({
 
   const pathname = usePathname()
 
-  // Check if the current path is the homepage
-  const isHomepage = /^\/(za|ew)?$/.test(pathname)
+  // Determine if we are on the homepage with optional country code
+  const isHomepage = /^\/(\w\w)?$/.test(pathname)
 
   // open cart dropdown when modifying the cart items, but only if we're not on the cart page
   useEffect(() => {
