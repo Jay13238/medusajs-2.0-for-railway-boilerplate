@@ -8,9 +8,9 @@ import Image from "next/image"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 // List of images for the slider
-import heroImage1 from "../../../../../public/hero1.jpeg"
-import heroImage2 from "../../../../../public/hero2.jpeg"
-import heroImage3 from "../../../../../public/hero3.jpeg"
+import heroImage1 from "../../../../../public/hero.jpeg"
+import heroImage2 from "../../../../../public/hero.jpeg"
+import heroImage3 from "../../../../../public/hero.jpeg"
 
 const images = [heroImage1, heroImage2, heroImage3]
 
