@@ -15,6 +15,8 @@ import cat1 from "../../../../public/cat1.webp"
 import cat2 from "../../../../public/blender.jpg"
 import { Heading } from "@medusajs/ui"
 
+import StaticProductTemplate from "./staticProd"
+
 
 
 // Array of category images
@@ -93,7 +95,7 @@ export default async function Home({ params: { countryCode } }) {
           </div>
         </section>
         <section>
-
+<StaticProductTemplate/>
         </section>
 
         {/* Contact Us Section */}
