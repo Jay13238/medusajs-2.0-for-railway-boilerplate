@@ -26,7 +26,7 @@ const StaticProductTemplate: React.FC = () => {
 
           {/* Static description */}
           <p className="text-lg text-gray-700">
-            Feeling tired of chasing quick fixes and fad diets? In "Sustain Me,"
+            Feeling tired of chasing quick fixes and fad diets? In Sustain Me,
             renowned health expert Barbara O'Neill unveils a revolutionary
             approach to well-being built on nine core principles. This
             easy-to-understand guide consisting of over 240 pages and full color
