@@ -1,4 +1,5 @@
 import React from "react"
+import Image from "next/image"
 import anImage from "../../../../public/cat1.webp"
 
 const StaticProductTemplate: React.FC = () => {
@@ -9,11 +10,13 @@ const StaticProductTemplate: React.FC = () => {
         data-testid="static-product-container"
       >
         <div className="block w-full max-w-[400px]">
-          {/* Static image */}
-          <img
-            src="../../../../public/cat1.webp"
+          {/* Static image using Next.js Image component */}
+          <Image
+            src={anImage} // Replace with your actual image path
             alt="Product"
-            className="w-full h-auto object-cover"
+            width={400} // Set width and height as needed
+            height={400} // Use exact dimensions for best optimization
+            className="object-cover"
           />
         </div>
         <div className="flex flex-col w-full small:max-w-[600px] gap-y-8">
