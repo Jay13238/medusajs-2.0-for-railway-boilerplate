@@ -46,12 +46,12 @@ const Hero = () => {
         }}
       >
         {images.map((image, index) => (
-          <div key={index} className="min-w-full h-full relative">
+          <div key={index} className="min-w-full h-[20vh] md:h-[75vh] relative">
             <Image
               src={image}
-              fill
+              layout="fill"
               alt={`Hero Image ${index + 1}`}
-              className="h-full w-full object-cover object-right"
+              className="object-cover object-right"
             />
           </div>
         ))}
