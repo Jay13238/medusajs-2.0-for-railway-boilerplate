@@ -81,14 +81,14 @@ const Hero = () => {
       {/* Navigation Controls */}
       <button
         onClick={goToPreviousImage}
-        className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white p-2 rounded-full z-30"
+        className="absolute bottom-4 left-4  text-white p-2 rounded-full z-30"
       >
         {"<"}
       </button>
 
       <button
         onClick={goToNextImage}
-        className="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white p-2 rounded-full z-30"
+        className="absolute bottom-4 right-4 text-white p-2 rounded-full z-30"
       >
         {">"}
       </button>
