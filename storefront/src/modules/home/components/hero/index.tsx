@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react"
 import { Heading } from "@medusajs/ui"
 import { Button } from "@nextui-org/react"
