@@ -16,28 +16,22 @@ const images = [heroImage1, heroImage2, heroImage3]
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [slideDirection, setSlideDirection] = useState("slide-right")
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setSlideDirection("slide-right")
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      )
+      goToNextImage()
     }, 5000)
 
     return () => clearInterval(intervalId)
   }, [])
 
   const goToNextImage = () => {
-    setSlideDirection("slide-right")
     setCurrentImageIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     )
   }
 
   const goToPreviousImage = () => {
-    setSlideDirection("slide-left")
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     )
@@ -46,14 +40,21 @@ const Hero = () => {
   return (
     <div className="h-[20vh] md:h-[75vh] w-full border-b border-ui-border-base relative overflow-hidden">
       <div
-        className={`absolute inset-0 transition-transform duration-700 ${slideDirection}`}
+        className="flex transition-transform duration-700 ease-in-out"
+        style={{
+          transform: `translateX(-${currentImageIndex * 100}%)`,
+        }}
       >
-        <Image
-          src={images[currentImageIndex]}
-          fill
-          alt="Hero Background"
-          className="h-full w-full object-cover object-right"
-        />
+        {images.map((image, index) => (
+          <div key={index} className="min-w-full h-full relative">
+            <Image
+              src={image}
+              fill
+              alt={`Hero Image ${index + 1}`}
+              className="h-full w-full object-cover object-right"
+            />
+          </div>
+        ))}
       </div>
 
       {/* Dark Overlay */}
@@ -88,36 +89,6 @@ const Hero = () => {
           {">"}
         </button>
       </div>
-
-      <style jsx>{`
-        .slide-right {
-          transform: translateX(0%);
-          animation: slideInRight 0.7s ease forwards;
-        }
-
-        .slide-left {
-          transform: translateX(-100%);
-          animation: slideInLeft 0.7s ease forwards;
-        }
-
-        @keyframes slideInRight {
-          0% {
-            transform: translateX(100%);
-          }
-          100% {
-            transform: translateX(0%);
-          }
-        }
-
-        @keyframes slideInLeft {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(0%);
-          }
-        }
-      `}</style>
     </div>
   )
 }
