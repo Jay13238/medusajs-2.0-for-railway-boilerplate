@@ -26,7 +26,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
   const isHomepage = /^\/(\w\w)?$/.test(pathname)
 
   return (
-    <div className="h-full">
+    <div className="h-full z-50">
       <div className="flex items-center h-full">
         <Popover className="h-full flex">
           {({ open, close }) => (
