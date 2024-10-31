@@ -8,9 +8,9 @@ import Image from "next/image"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 // List of images for the slider
-import heroImage1 from "../../../../../public/hero.jpeg"
-import heroImage2 from "../../../../../public/div.jpg"
-import heroImage3 from "../../../../../public/hero.jpeg"
+import heroImage1 from "../../../../../public/hero1.jpeg"
+import heroImage2 from "../../../../../public/hero2.jpeg"
+import heroImage3 from "../../../../../public/hero3.jpeg"
 
 const images = [heroImage1, heroImage2, heroImage3]
 
@@ -38,7 +38,7 @@ const Hero = () => {
   }
 
   return (
-    <div className="h-[20vh] md:h-[75vh] w-full border-b border-ui-border-base relative overflow-hidden">
+    <div className="h-[35vh] md:h-[75vh] w-full border-b border-ui-border-base relative overflow-hidden">
       <div
         className="flex transition-transform duration-700 ease-in-out"
         style={{
@@ -48,7 +48,7 @@ const Hero = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="min-w-full h-[20vh] md:h-[75vh] flex-shrink-0 relative"
+            className="min-w-full h-[35vh] md:h-[75vh] flex-shrink-0 relative"
           >
             <Image
               src={image}
