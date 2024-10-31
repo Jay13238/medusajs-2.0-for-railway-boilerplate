@@ -32,7 +32,7 @@ const Hero = () => {
         className="h-full w-full"
       >
         {heroImages.map((image, index) => (
-          <SwiperSlide key={index} className="relative h-full w-full">
+          <SwiperSlide key={index} className="relative h-full w-full z-20">
             <Image
               src={image}
               fill
