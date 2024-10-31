@@ -1,25 +1,57 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { Github } from "@medusajs/icons"
 import { Heading } from "@medusajs/ui"
-import { Button, ButtonGroup } from "@nextui-org/react"
-import heroImage from "../../../../../public/hero.jpeg"
+import { Button } from "@nextui-org/react"
 import Image from "next/image"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
+// List of images for the slider
+import heroImage1 from "../../../../../public/hero.jpeg"
+import heroImage2 from "../../../../../public/hero.jpeg"
+import heroImage3 from "../../../../../public/hero.jpeg"
+
+const images = [heroImage1, heroImage2, heroImage3]
+
 const Hero = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  // Automatically transition images every 5 seconds
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      )
+    }, 5000)
+
+    return () => clearInterval(intervalId)
+  }, [])
+
+  // Handlers for manual navigation
+  const goToNextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    )
+  }
+
+  const goToPreviousImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    )
+  }
+
   return (
-    <div className=" h-[20vh]  md:h-[75vh] w-full border-b border-ui-border-base relative">
+    <div className="h-[20vh] md:h-[75vh] w-full border-b border-ui-border-base relative">
       <Image
-        src={heroImage}
+        src={images[currentImageIndex]}
         fill
         alt="Hero Background"
-        className="absolute inset-0 h-full w-full object-cover object-right "
+        className="absolute inset-0 h-full w-full object-cover object-right transition-opacity duration-500"
       />
 
       {/* Dark Overlay */}
-
-      <div className="absolute hidden md:flex inset-0 z-20  flex-col justify-center items-center text-center small:p-32 gap-6">
+      <div className="absolute hidden md:flex inset-0 z-20 flex-col justify-center items-center text-center p-32 gap-6">
         <span>
           <Heading
             level="h1"
@@ -33,6 +65,22 @@ const Hero = () => {
             Shop Now
           </Button>
         </LocalizedClientLink>
+      </div>
+
+      {/* Navigation Controls */}
+      <div className="absolute inset-0 flex justify-between items-center px-4 z-30">
+        <button
+          onClick={goToPreviousImage}
+          className="bg-black bg-opacity-50 text-white p-2 rounded-full"
+        >
+          {"<"}
+        </button>
+        <button
+          onClick={goToNextImage}
+          className="bg-black bg-opacity-50 text-white p-2 rounded-full"
+        >
+          {">"}
+        </button>
       </div>
     </div>
   )
