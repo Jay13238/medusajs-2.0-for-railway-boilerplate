@@ -8,18 +8,19 @@ import Image from "next/image"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 // List of images for the slider
-import heroImage1 from "../../../../../public/hero.jpeg"
-import heroImage2 from "../../../../../public/div.jpg"
-import heroImage3 from "../../../../../public/hero.jpeg"
+import heroImage1 from "../../../../../public/hero1.jpeg"
+import heroImage2 from "../../../../../public/hero2.jpeg"
+import heroImage3 from "../../../../../public/hero3.jpeg"
 
 const images = [heroImage1, heroImage2, heroImage3]
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [slideDirection, setSlideDirection] = useState("slide-right")
 
-  // Automatically transition images every 5 seconds
   useEffect(() => {
     const intervalId = setInterval(() => {
+      setSlideDirection("slide-right")
       setCurrentImageIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       )
@@ -28,27 +29,32 @@ const Hero = () => {
     return () => clearInterval(intervalId)
   }, [])
 
-  // Handlers for manual navigation
   const goToNextImage = () => {
+    setSlideDirection("slide-right")
     setCurrentImageIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     )
   }
 
   const goToPreviousImage = () => {
+    setSlideDirection("slide-left")
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     )
   }
 
   return (
-    <div className="h-[20vh] md:h-[75vh] w-full border-b border-ui-border-base relative">
-      <Image
-        src={images[currentImageIndex]}
-        fill
-        alt="Hero Background"
-        className="absolute inset-0 h-full w-full object-cover object-right transition-opacity duration-500"
-      />
+    <div className="h-[20vh] md:h-[75vh] w-full border-b border-ui-border-base relative overflow-hidden">
+      <div
+        className={`absolute inset-0 transition-transform duration-700 ${slideDirection}`}
+      >
+        <Image
+          src={images[currentImageIndex]}
+          fill
+          alt="Hero Background"
+          className="h-full w-full object-cover object-right"
+        />
+      </div>
 
       {/* Dark Overlay */}
       <div className="absolute hidden md:flex inset-0 z-20 flex-col justify-center items-center text-center p-32 gap-6">
@@ -82,6 +88,36 @@ const Hero = () => {
           {">"}
         </button>
       </div>
+
+      <style jsx>{`
+        .slide-right {
+          transform: translateX(0%);
+          animation: slideInRight 0.7s ease forwards;
+        }
+
+        .slide-left {
+          transform: translateX(-100%);
+          animation: slideInLeft 0.7s ease forwards;
+        }
+
+        @keyframes slideInRight {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(0%);
+          }
+        }
+
+        @keyframes slideInLeft {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(0%);
+          }
+        }
+      `}</style>
     </div>
   )
 }
