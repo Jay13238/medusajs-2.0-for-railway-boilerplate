@@ -1,6 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import anImage from "../../../../public/cat1.webp"
+import Link from "next/link"
 
 const StaticProductTemplate: React.FC = () => {
   return (
@@ -21,21 +22,24 @@ const StaticProductTemplate: React.FC = () => {
         </div>
         <div className="flex flex-col w-full small:max-w-[600px] gap-y-8">
           {/* Static title */}
-          <h1 className="text-2xl font-bold">Product Title</h1>
+          <h1 className="text-2xl font-bold">Sustain Me</h1>
 
           {/* Static description */}
           <p className="text-lg text-gray-700">
-            This is a static description of the product. It highlights key
-            features and details to entice users.
+            Feeling tired of chasing quick fixes and fad diets? In "Sustain Me,"
+            renowned health expert Barbara O'Neill unveils a revolutionary
+            approach to well-being built on nine core principles. This
+            easy-to-understand guide consisting of over 240 pages and full color
+            graphics offers a roadmap to lasting health
           </p>
 
           {/* Button to navigate to the purchase page */}
-          <a
+          <Link
             href="/purchase-page-url"
             className="bg-blue-600 text-white py-2 px-4 rounded text-center inline-block"
           >
             Buy Now
-          </a>
+          </Link>
         </div>
       </div>
     </>
