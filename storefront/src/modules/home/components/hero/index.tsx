@@ -78,33 +78,31 @@ const Hero = () => {
         </LocalizedClientLink>
       </div>
 
-      {/* Navigation Controls with Dots */}
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center gap-4 z-30">
-        <button
-          onClick={goToPreviousImage}
-          className="bg-black bg-opacity-50 text-white p-2 rounded-full"
-        >
-          {"<"}
-        </button>
+      {/* Navigation Controls */}
+      <button
+        onClick={goToPreviousImage}
+        className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white p-2 rounded-full z-30"
+      >
+        {"<"}
+      </button>
 
-        {/* Dots for Image Indicator */}
-        <div className="flex gap-2">
-          {images.map((_, index) => (
-            <span
-              key={index}
-              className={`w-3 h-3 rounded-full ${
-                currentImageIndex === index ? "bg-white" : "bg-gray-400"
-              }`}
-            ></span>
-          ))}
-        </div>
+      <button
+        onClick={goToNextImage}
+        className="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white p-2 rounded-full z-30"
+      >
+        {">"}
+      </button>
 
-        <button
-          onClick={goToNextImage}
-          className="bg-black bg-opacity-50 text-white p-2 rounded-full"
-        >
-          {">"}
-        </button>
+      {/* Dots for Image Indicator */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-30">
+        {images.map((_, index) => (
+          <span
+            key={index}
+            className={`w-3 h-3 rounded-full ${
+              currentImageIndex === index ? "bg-white" : "bg-gray-400"
+            }`}
+          ></span>
+        ))}
       </div>
     </div>
   )
