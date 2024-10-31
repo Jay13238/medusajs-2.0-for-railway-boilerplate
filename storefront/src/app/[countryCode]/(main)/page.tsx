@@ -14,6 +14,7 @@ import cat1 from "../../../../public/cat1.webp"
 
 import cat2 from "../../../../public/blender.jpg"
 import { Heading } from "@medusajs/ui"
+import SingleProductDisplay from "./SingleProductDisplay"
 
 
 // Array of category images
@@ -91,6 +92,9 @@ export default async function Home({ params: { countryCode } }) {
             ))}
           </div>
         </section>
+        <section>
+          <SingleProductDisplay />
+        </section>
 
         {/* Contact Us Section */}
         <section className="bg-secondary py-16 px-4">
@@ -123,9 +127,7 @@ export default async function Home({ params: { countryCode } }) {
         </section>
 
         {/* Featured Products */}
-        <ul className="flex flex-col gap-x-6">
-  
-        </ul>
+        <ul className="flex flex-col gap-x-6"></ul>
       </div>
     </>
   )
