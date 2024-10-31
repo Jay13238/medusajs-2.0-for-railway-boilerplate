@@ -1,4 +1,4 @@
-// File: components/SingleProductDisplay.tsx
+"use client"
 
 import { useEffect, useState } from "react"
 import { notFound } from "next/navigation"
