@@ -1,7 +1,8 @@
 "use client"
 
+import { Github } from "@medusajs/icons"
 import { Heading } from "@medusajs/ui"
-import { Button } from "@nextui-org/react"
+import { Button, ButtonGroup } from "@nextui-org/react"
 import heroImage1 from "../../../../../public/hero.jpeg"
 import heroImage2 from "../../../../../public/hero.jpeg"
 import heroImage3 from "../../../../../public/hero.jpeg"
@@ -9,6 +10,7 @@ import Image from "next/image"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"
+
 import { Swiper, SwiperSlide } from "swiper/react"
 
 // Import Swiper styles
@@ -32,7 +34,7 @@ const Hero = () => {
         className="h-full w-full"
       >
         {heroImages.map((image, index) => (
-          <SwiperSlide key={index} className="relative h-full w-full z-20">
+          <SwiperSlide key={index} className="relative h-full w-full">
             <Image
               src={image}
               fill
