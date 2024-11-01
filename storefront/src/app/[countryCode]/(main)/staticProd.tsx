@@ -1,7 +1,6 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 const StaticProductTemplate: React.FC = () => {
   return (
@@ -27,14 +26,14 @@ const StaticProductTemplate: React.FC = () => {
           {/* Static description */}
           <p className="text-lg text-gray-700">
             Feeling tired of chasing quick fixes and fad diets? In Sustain Me,
-            renowned health expert Barbara O'Neill unveils a revolutionary
+            renowned health expert Barbara O&apos;Neill unveils a revolutionary
             approach to well-being built on nine core principles. This
             easy-to-understand guide consisting of over 240 pages and full color
-            graphics offers a roadmap to lasting health
+            graphics offers a roadmap to lasting health.
           </p>
 
           {/* Button to navigate to the purchase page */}
-          <Link href="/products/sustain-me">
+          <Link href="/purchase-page-url">
             <a className="bg-blue-600 text-white py-2 px-4 rounded text-center inline-block">
               Buy Now
             </a>
