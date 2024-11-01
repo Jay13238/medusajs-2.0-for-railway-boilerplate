@@ -1,6 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
+import anImage from "../../../../public/cat1.webp"
 
 const StaticProductTemplate: React.FC = () => {
   return (
@@ -10,9 +11,9 @@ const StaticProductTemplate: React.FC = () => {
         data-testid="static-product-container"
       >
         <div className="block w-full max-w-[400px]">
-          {/* Static image using Next.js Image component */}
+  
           <Image
-            src="/cat1.webp" // Use the direct path from the public directory
+            src={anImage} // Use the direct path from the public directory
             alt="Product"
             width={400} // Set width and height as needed
             height={400} // Use exact dimensions for best optimization
