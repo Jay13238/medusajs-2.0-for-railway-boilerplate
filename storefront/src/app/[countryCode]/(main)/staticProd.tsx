@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "next/image"
-import anImage from "../../../../public/cat1.webp"
 import Link from "next/link"
+import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 const StaticProductTemplate: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const StaticProductTemplate: React.FC = () => {
         <div className="block w-full max-w-[400px]">
           {/* Static image using Next.js Image component */}
           <Image
-            src={anImage} // Replace with your actual image path
+            src="/cat1.webp" // Use the direct path from the public directory
             alt="Product"
             width={400} // Set width and height as needed
             height={400} // Use exact dimensions for best optimization
@@ -34,11 +34,10 @@ const StaticProductTemplate: React.FC = () => {
           </p>
 
           {/* Button to navigate to the purchase page */}
-          <Link
-            href="/purchase-page-url"
-            className="bg-blue-600 text-white py-2 px-4 rounded text-center inline-block"
-          >
-            Buy Now
+          <Link href="/products/sustain-me">
+            <a className="bg-blue-600 text-white py-2 px-4 rounded text-center inline-block">
+              Buy Now
+            </a>
           </Link>
         </div>
       </div>
