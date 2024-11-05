@@ -10,9 +10,8 @@ const backendUrl = process.env.RAILWAY_PUBLIC_DOMAIN_VALUE || 'http://localhost:
 const PAYSTACK_SECRET_KEY = "pk_test_13736085a74e0bda5aacbc620ba4e40fb26097c2";
 
 const plugins = [
-  'medusa-fulfillment-manual',
  {
-   resolve: 'madusa-payment-paystack',
+   resolve: 'medusa-payment-paystack',
    options: {
     secret_key: PAYSTACK_SECRET_KEY,
    },
