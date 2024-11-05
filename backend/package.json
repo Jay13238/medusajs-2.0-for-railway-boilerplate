@@ -32,6 +32,7 @@
     "@mikro-orm/postgresql": "5.9.7",
     "@typed-dev/medusa-notification-resend": "github:rpuls/medusa-notification-resend",
     "awilix": "^8.0.1",
+    "medusa-payment-paystack": "^2.0.0-next.1",
     "medusajs-launch-utils": "^0.0.5",
     "pg": "^8.13.0"
   },

@@ -10,42 +10,52 @@ const backendUrl = process.env.RAILWAY_PUBLIC_DOMAIN_VALUE || 'http://localhost:
 const PAYSTACK_SECRET_KEY = "pk_test_13736085a74e0bda5aacbc620ba4e40fb26097c2";
 
 const plugins = [
- {
-   resolve: 'medusa-payment-paystack',
-   options: {
-    secret_key: PAYSTACK_SECRET_KEY,
-   },
- }
+
  
 ];
 
 const modules = {
-  [Modules.AUTH]: {
-    resolve: '@medusajs/auth',
+  [Modules.PAYMENT]: {
+    resolve: "@medusajs/medusa/payment",
     options: {
       providers: [
         {
-          resolve: '@medusajs/auth-emailpass',
-          id: 'emailpass',
-          options: {}
-        }
-      ]
-    }
+          resolve: "medusa-payment-paystack",
+          id: "paystack",
+          options: {
+            secret_key: PAYSTACK_SECRET_KEY,
+          } satisfies import("medusa-payment-paystack").PluginOptions,
+        },
+      ],
+    },
+  },
+
+  [Modules.AUTH]: {
+    resolve: "@medusajs/auth",
+    options: {
+      providers: [
+        {
+          resolve: "@medusajs/auth-emailpass",
+          id: "emailpass",
+          options: {},
+        },
+      ],
+    },
   },
   [Modules.FILE]: {
-    resolve: '@medusajs/file',
+    resolve: "@medusajs/file",
     options: {
       providers: [
         {
-          resolve: '@medusajs/file-local',
-          id: 'local',
+          resolve: "@medusajs/file-local",
+          id: "local",
           options: {
-            upload_dir: 'static',
-            backend_url: `${backendUrl}/static`
-          }
-        }
-      ]
-    }
+            upload_dir: "static",
+            backend_url: `${backendUrl}/static`,
+          },
+        },
+      ],
+    },
   },
 };
 
@@ -74,6 +84,7 @@ if (stripeConfigured) {
           resolve: '@medusajs/payment-stripe',
           id: 'stripe',
           options: {
+            //@ts-ignore
             apiKey: stripeApiKey,
             webhookSecret: stripeWebhookSecret
           }
