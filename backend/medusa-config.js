@@ -7,16 +7,16 @@ loadEnv(process.env.NODE_ENV, process.cwd());
 
 const backendUrl = process.env.RAILWAY_PUBLIC_DOMAIN_VALUE || 'http://localhost:9000';
 
-const PAYSTACK_SECRET_KEY = "sk_test_ee188719efa139c56f70bcdcd0f94f3303323bd0";
+// const PAYSTACK_SECRET_KEY = "sk_test_ee188719efa139c56f70bcdcd0f94f3303323bd0";
 
 const plugins = [
   // 'medusa-fulfillment-manual',
- {
-   resolve: 'madusa-payment-paystack',
-   options: {
-    secret_key: PAYSTACK_SECRET_KEY,
-   },
- }
+//  {
+//    resolve: 'madusa-payment-paystack',
+//    options: {
+//     secret_key: PAYSTACK_SECRET_KEY,
+//    },
+//  }
  
 ];
 
