@@ -27,7 +27,7 @@ export const paymentInfoMap: Record<
     icon: <PayPal />,
   },
 
-  pp_paystack: {
+  op_paystack: {
     title: "PayStack",
     icon: <CreditCard />,
   },
@@ -47,7 +47,7 @@ export const isPaypal = (providerId?: string) => {
 }
 
 export const isPayStack = (providerId?: string) => {
-  return providerId?.startsWith("pp_paystack")
+  return providerId?.startsWith("op_paystack")
 }
 export const isManual = (providerId?: string) => {
   return providerId?.startsWith("pp_system_default")
