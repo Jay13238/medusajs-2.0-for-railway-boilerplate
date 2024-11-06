@@ -10,24 +10,7 @@ export const paymentInfoMap: Record<
   string,
   { title: string; icon: React.JSX.Element }
 > = {
-  pp_stripe_stripe: {
-    title: "Credit card",
-    icon: <CreditCard />,
-  },
-  "pp_stripe-ideal_stripe": {
-    title: "iDeal",
-    icon: <Ideal />,
-  },
-  "pp_stripe-bancontact_stripe": {
-    title: "Bancontact",
-    icon: <Bancontact />,
-  },
-  pp_paypal_paypal: {
-    title: "PayPal",
-    icon: <PayPal />,
-  },
-
-  pp_paystack_paystack: {
+  pp_paystack: {
     title: "PayStack",
     icon: <CreditCard />,
   },
@@ -39,15 +22,10 @@ export const paymentInfoMap: Record<
 }
 
 // This only checks if it is native stripe for card payments, it ignores the other stripe-based providers
-export const isStripe = (providerId?: string) => {
-  return providerId?.startsWith("pp_stripe_")
-}
-export const isPaypal = (providerId?: string) => {
-  return providerId?.startsWith("pp_paypal")
-}
+
 
 export const isPayStack = (providerId?: string) => {
-  return providerId?.startsWith("pp_paystack_paystack")
+  return providerId?.startsWith("pp_paystack")
 }
 export const isManual = (providerId?: string) => {
   return providerId?.startsWith("pp_system_default")
