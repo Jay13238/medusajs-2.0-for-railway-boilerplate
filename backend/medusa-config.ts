@@ -11,7 +11,7 @@ const PAYSTACK_SECRET_KEY = "pk_test_13736085a74e0bda5aacbc620ba4e40fb26097c2";
 
 const plugins = [
 
- 
+
 ];
 
 const modules = {
