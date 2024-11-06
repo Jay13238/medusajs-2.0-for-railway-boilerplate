@@ -21,7 +21,7 @@ const modules = {
       providers: [
         {
           resolve: "medusa-payment-paystack",
-          
+          id: "pp_paystack_paystack",
           options: {
             secret_key: PAYSTACK_SECRET_KEY,
           } satisfies import("medusa-payment-paystack").PluginOptions,
