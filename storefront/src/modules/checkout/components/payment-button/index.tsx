@@ -395,7 +395,7 @@ const PaystackPaymentButton = ({
   return (
     <>
       <div data-testid={dataTestId}>
-        <PaystackButton {...componentProps} />
+        <PaystackButton {...componentProps} className="bg-red-500 w-32 h-20  " />
       </div>
       <ErrorMessage
         error={errorMessage}
