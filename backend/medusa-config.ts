@@ -70,29 +70,6 @@ if (process.env.REDIS_URL) {
   };
 }
 
-// Stripe payment provider
-const stripeApiKey = process.env.STRIPE_API_KEY;
-const stripeWebhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
-const stripeConfigured = stripeApiKey && stripeWebhookSecret;
-if (stripeConfigured) {
-  console.log('Stripe api key and webhook secret found, enabling stripe payment provider');
-  modules[Modules.PAYMENT] = {
-    resolve: '@medusajs/payment',
-    options: {
-      providers: [
-        {
-          resolve: '@medusajs/payment-stripe',
-          id: 'stripe',
-          options: {
-            //@ts-ignore
-            apiKey: stripeApiKey,
-            webhookSecret: stripeWebhookSecret
-          }
-        }
-      ]
-    }
-  };
-}
 
 // SendGrid notification provider
 const sendgridApiKey = process.env.SENDGRID_API_KEY;
