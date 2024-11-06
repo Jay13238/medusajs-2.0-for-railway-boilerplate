@@ -59,14 +59,7 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({
           data-testid={dataTestId}
         />
       )
-    case isPayStack(paymentSession?.provider_id):
-      return (
-        <PaystackPaymentButton
-          notReady={notReady}
-          cart={cart}
-          data-testid={dataTestId}
-        />
-      )
+
     default:
       return <Button disabled>Select a payment method</Button>
   }
@@ -308,98 +301,6 @@ const ManualTestPaymentButton = ({
       <ErrorMessage
         error={errorMessage}
         data-testid="manual-payment-error-message"
-      />
-    </>
-  )
-}
-
-const PAYSTACK_PUBLIC_KEY = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || ""
-
-const PaystackPaymentButton = ({
-  cart,
-  notReady,
-  "data-testid": dataTestId,
-}: {
-  cart: HttpTypes.StoreCart
-  notReady: boolean
-  "data-testid"?: string
-}) => {
-  const [submitting, setSubmitting] = useState(false)
-  const [errorMessage, setErrorMessage] = useState<string | null>(null)
-
-  const onPaymentCompleted = async () => {
-    setSubmitting(true)
-    await placeOrder()
-      .catch((err) => {
-        setErrorMessage(err.message)
-      })
-      .finally(() => {
-        setSubmitting(false)
-      })
-  }
-
-  if (!PAYSTACK_PUBLIC_KEY) {
-    setErrorMessage("Paystack public key not found")
-    return (
-      <ErrorMessage
-        error={errorMessage}
-        data-testid="paystack-payment-error-message"
-      />
-    )
-  }
-
-  const amount = cart.total ?? 0 // Use amount directly as provided
-  const email = cart.email || ""
-  const firstName = cart.billing_address?.first_name || ""
-  const lastName = cart.billing_address?.last_name || ""
-
-  const session = cart.payment_collection?.payment_sessions?.find(
-    (s) => s.status === "pending"
-  )
-
-  const txRef = String(session?.data?.paystackTxRef || cart.id)
-
-  const handlePaymentSuccess = (reference: any) => {
-    onPaymentCompleted()
-  }
-
-  const handlePaymentClose = () => {
-    // Payment window is closed
-  }
-
-  const componentProps = {
-    amount,
-    publicKey: PAYSTACK_PUBLIC_KEY,
-    email,
-    reference: txRef,
-    text: "Pay with Paystack",
-    onSuccess: handlePaymentSuccess,
-    onClose: handlePaymentClose,
-    metadata: {
-      cartId: cart.id,
-      custom_fields: [
-        {
-          display_name: "First Name",
-          variable_name: "firstName",
-          value: firstName,
-        },
-        {
-          display_name: "Last Name",
-          variable_name: "lastName",
-          value: lastName,
-        },
-      ],
-    },
-  }
-
-  return (
-    <>
-      <div data-testid={dataTestId}>
-        <PaystackButton {...componentProps} className="bg-red-500 w-32 h-20  " />
-      </div>
-      <ErrorMessage
-        error={errorMessage}
-        data-testid="paystack-payment-error-message"
       />
     </>
   )
